@@ -23,6 +23,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build -t ${IMAGE_NAME}:${COMMIT} .'
+                sh 'docker images'
                 sh "docker run -d --name ${CONTEINER_NAME} -p 8000:8000 django_app:${COMMIT}"
 
             }
