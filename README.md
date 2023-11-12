@@ -1,70 +1,36 @@
-# Django-WebApp       <img alt="GitHub" src="https://img.shields.io/github/license/smahesh29/Django-WebApp">
-
 <h1>DevConnect Web App!</h1>
 
+* <h3>Introduction</h3>
+The DevConnect project aims to unite the global DevOps community by creating a platform that fosters communication, collaboration, and knowledge sharing among DevOps professionals. This project focuses on implementing the best DevSecOps practices and leveraging Google Cloud Platform (GCP) technologies.
+
+* <h3>Dockerization</h3>
+
+    * I've crafted a Dockerfile that encapsulates all the necessary requirements for the application to seamlessly run across various environments.
+
+    * To streamline the deployment and removal processes, I've developed two crucial shell scripts: init.sh and delete.sh. These scripts are designed to efficiently handle the initialization and deletion of the application environment.
+
+    * Ensuring data persistence is a priority for the application's reliability. I personally established a persistent volume to securely store essential data, contributing to a robust and consistent user experience.
+
+* <h3>Deployment</h3>
+
+    * I established an artifact repository to store Docker images.
+
+    * I set up a  GKE cluster.
+
+    * I exposed the application through a LoadBalancer service, providing user access via a web browser.
+      
+* <h3>CI/CD Pipeline with Jenkins</h3>
+
+    * I created a Compute Engine virtual machine for Jenkins automation.
+
+    * I built the Jenkins image, uploaded it to the artifact registry, and executed it within the Compute Engine instance.
+
+    * I implemented a CI/CD pipeline for automated builds and deployments.
+      
+* <h3>Architecture Diagram</h3>
+
+![צילום מסך 2023-11-12 203219](https://github.com/rivkyrizel/DevConnect/assets/100497249/e68ca598-ca34-4a4d-96f0-79fc20120ca5)
 
 
-<h2>Development Team documentation:</h2>
-
-<h4>Part 1:</h4>
-<ol>
-    <li>Create a web-app where a user can login.</li>
-    <li>User can upload files.</li>
-    <li>User can view his/her uploaded files.</li>
-</ol>
-
-<h4>Part 2:</h4>
-<ol>
-     <li>User can search and view profile of other users.</li>
-     <li>They can share their uploaded files with any of those users.</li>
-     <li>Users can see the shared files by other users also in uploaded files.</li>
-</ol>
-
-<h4>Additional Features:</h4>
-<ol>
-    <li>In users profile user can set his/her profile picture.</li>
-    <li>Users can download other users uploaded files.</li>
-    <li>The user can upload any type of files such as images, videos, text files and also different types of programs like python code, java code, etc.</li>
-</ol>
-    
-<h2>Technologies Used:</h2>
-<ul>
-    <li>Python</li>
-    <li>Django</li>
-    <li>Bootstrap</li>
-    <li>JavaScript</li>
-</ul>
-    
-<h2>Additional Python Modules Required:</h2>
-<ul>
-    <li>Django</li>
-    <li>django-crispy-forms</li>
-    <li>Pillow</li>
-</ul>
-  
-<h2>Note :</h2>
-
-<b>The Secret_Key required for the execution and debugging of project is not removed from the project code. So you can use the project as your college mini-project or by using the project code you can build your own project.</b>
-
-
-<h2>Testing:</h2>
-
-    python django_web_app/manage.py test
-
-    
-<h2>Usage :</h2>
-
-    python django_web_app/manage.py makemigrations
-
-    python django_web_app/manage.py migrate
-
-    python django_web_app/manage.py runserver
-    
-   In your web browser enter the address : http://localhost:8000 or http://127.0.0.1:8000/
-
-
-
-# Working:
-[![Watch the video](https://img.youtube.com/vi/qIK-vfTig6c/0.jpg)](https://youtu.be/qIK-vfTig6c)
 
 
