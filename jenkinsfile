@@ -9,6 +9,7 @@ pipeline {
         IMAGE_NAME = 'django'
         ARTIFACT_URL = 'me-west1-docker.pkg.dev/devconnect-project/rivky-rizel-artifacts/dev_connect'
         COMMIT = '7876d49'
+        CONTEINER_NAME = "django"
     }
 
     stages {
@@ -27,7 +28,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build -t ${IMAGE_NAME}:${COMMIT} -f ${dockerfilePath} .'
-                sh "docker images"
+                sh "docker run -d --name ${CONTEINER_NAME} -p 8000:8000 django_app:${COMMIT}"
+
             }
         }
 
@@ -35,7 +37,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh 'python django_web_app/manage.py test'
+                    sh "docker exec ${CONTEINER_NAME} python django_web_app/manage.py test"
                 }
             }
         }
