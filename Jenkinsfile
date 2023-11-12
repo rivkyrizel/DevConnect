@@ -8,7 +8,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'django'
         ARTIFACT_URL = 'me-west1-docker.pkg.dev/devconnect-project/rivky-rizel-artifacts/dev_connect'
-        COMMIT = '7876d49'
+        COMMIT = 'sh(script: 'git log -1 --pretty=%B', returnStdout: true).trim()'
         CONTEINER_NAME = "django"
     }
 
@@ -48,6 +48,7 @@ pipeline {
                     sh 'gcloud auth configure-docker me-west1-docker.pkg.dev'
                     sh 'docker tag ${IMAGE_NAME}:${COMMIT} ${ARTIFACT_URL}:${COMMIT}'
                     sh 'docker push ${ARTIFACT_URL}:${COMMIT}'
+
                 }
             }
         }
