@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: me-west1-docker.pkg.dev/devconnect-final-project/rivky-rizel-artifacts/dev_connect:latest
+        image: me-west1-docker.pkg.dev/devconnect-project/rivky-rizel-artifacts/dev_connect:latest
         ports:
         - containerPort: 8000
      tolerations:
