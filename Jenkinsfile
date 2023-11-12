@@ -78,9 +78,9 @@ pipeline {
             echo 'The pipeline failed :('
         }
 
-        // always {
-        //     // Clean up resources and workspace
-        //     //cleanWs()
-        // }
+        always {
+            // Clean up resources and workspace
+            cleanWs()
+        }
     }
 }
